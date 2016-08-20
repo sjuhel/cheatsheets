@@ -1,0 +1,169 @@
+################################################################################
+# VIM CHEAT SHEET                                                              #
+#                                                                              #
+# made by sjuhel                                                               #
+################################################################################
+
+
+GENERAL:
+========
+    Nearly all commands can be preceded by a number for a repeat count. 
+      eg. 5dd delete 5 lines
+    <Esc> gets you out of any mode and back to command mode
+    Commands preceded by : are executed on the command line at the bottom 
+    of the screen
+
+FILES:
+======
+    :e <file>                - edit a file in a new buffer (see buffer section)
+    :w <file>                - write the file without exiting
+    :q                       - quit (fail if anything has changed)
+    :q!                      - quit without saving changes 
+    :wq (or :x)              - write and quit
+
+BASIC MOVES:
+============
+    cursor movement: 
+        h (left), j (down), k (up), l (right)
+    words:
+        w  - next word by punctuation        W  - next word by space
+        b  - back word by punctuation        B  - back word by space
+        e  - end word by punctuation         E  - end word by space
+        ge - back end word by punctuation    gE - back end word by space
+    lines:
+        0    - start of the line
+        ^    - first non blank character of the line
+        $    - end of the line
+    files:
+        gg   - begining of the file
+        [n]G - got to line n
+        G    - end of the file
+    line search:
+        f<char> - go at the first next occurence of <char> in line
+        F<char> - go at the first previous occurence of <char> in line
+        t<char> - go right before the first occurence of <char> in line
+        T<char> - go right after the first previous occurence of <char> in line
+
+ADVANCED MOVES:
+===============
+    ctrl-u  - go up half a screen      ctrl-f  - next page
+    ctrl-d  - go down half a screen    ctrl-b  - previous page
+    
+    M    - go to the middle of the window
+    [n]H - go [n] lines below the top of the window
+    [n]L - go [n] lines above the bottom of the window
+
+    zt   - put the line under the cursor at the top of the window
+    zb   - put the line under the cursor at the bottom of the window
+    zz   - put the line under the cursor at the middle of the window
+      
+INSERTING:
+==========
+    i - insert under cursor       I - insert at the begining of the line
+    a - insert after cursor       A - insert at the end of the line
+    o - open a new line below     O - open a new line above
+    v - start visual mode         V - start linewise visual mode
+                                  R - start replacing mode
+    # ea - append at the end of the word
+
+EDITING:
+========
+    r         - replace a single character
+    J         - join line below to the current one
+    cc        - change (replace) an entire line
+    cw        - change (replace) to the end of word
+
+    u         - undo
+    ctrl-r    - redo
+
+    .         - repeat last command
+    ~         - switch case
+
+    g~iw      - switch case of current word
+    gUiw      - make current word uppercase
+    guiw      - make current word lowercase
+
+    >>        - indent line one column to right
+    <<        - indet line one column to left
+    ==        - auto-indent current line
+    
+    d/c <motion> (delete/change the text in direction of the motion)
+        - motion i: inside
+        - motion a: around
+    
+COPY AND PASTE:
+===============
+    dd   - delete (cut) a line
+    dw   - delete (cut) a word
+    x    - delete character under the cursor
+    X    - delete character before the cursor
+
+    yy   - copy a line
+    yw   - copy a word
+
+    p    - paste buffer after the cursor (or line)
+    P    - paste buffer before the cursor (or line)
+
+SEARCH AND REPLACE:
+===================
+    /<pattern>     - search for <pattern>
+    ?<pattern>     - search backward for <pattern>
+    :noh           - disable highlights
+
+    n              - repeat search in the same direction
+    N              - repeat search in the opposite direction
+
+    :[%]s/pattern/replace/[gci]
+                   - replace the first occurence of pattern in the line
+                        % -> affect all the lines in file
+                        g -> all occurences in the line (global)
+                        c -> ask for confirmation
+                        i -> ignorecase
+
+MACROS AND REGISTERS:
+=====================
+    q<key>      - start recording a macro and stores it in the register <key>
+    :registers  - show list of registers
+    @<key>      - execute the macro stored in <key>
+    @@          - execute the previous executed macro
+
+MARKERS:
+========
+    m<key>      - create a marker at the current line and stores it in register
+    '<key>      - go to the marker stored in register <key>
+    ''          - go to the previous marker
+    :marks 		- show all markers
+
+COMMAND LINE:
+=============
+    :!<cmd>        - invoke command
+    :read !<cmd>   - read the output of cmd and paste it into vim
+
+BUFFERS:
+========
+    :ls            - list all buffers
+    :b[n]          - go to the buffer n
+    :bn (:bnext)   - go to the next buffer (in the list)
+    :bp (:bprev)   - go to the previous buffer (in the list)
+    :bd[n]         - delete the buffer number n
+    :b#            - swicth to the previous used buffer
+
+WINDOWS AND TABS:
+=================
+    :edit           - open a file in a new buffer
+    :vsplit         - split window veritcally
+    :split          - split window horizontally
+    ctrl-w h,j,k,l  - swith between windows
+    ctrl-w H,J,K,L  - move the current window to the direction
+    
+    ctrl-w [n]+/-   - increase/reduce the height by n rows
+    ctrl-w [n]>/<   - increase/reduce the width by n columns
+    ctrl-w =        - go back to a equal sized windows
+
+    :sb             - open a buffer in a splitted window
+    :vert sb        - open a buffer in a vertical splitted window
+
+    :tabedit        - open a file in a new tab
+    :gt             - move one tab forward
+    :gT             - move one tab before
+

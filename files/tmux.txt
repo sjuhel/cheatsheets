@@ -1,0 +1,60 @@
+u################################################################################
+# TMUX CHEAT SHEET                                                             #
+#                                                                              #
+# made by sjuhel                                                               #
+################################################################################
+
+
+COMMANDS:
+=========
+    tmux new -s <name>                  - creates new session
+    tmux attach -t <name>               - attach to an existing session
+    tmux detach                         - detach from a session
+    tmux kill-session -t <name>         - kill a session
+    tmux rename-session -t <old> <new>  - rename a session
+    tmux ls                             - list all sessions
+
+TMUX VISUAL LAYOUT:
+===================
+    +- session ---------------------+
+    |                               |
+    | +- window ---+ +- window ---+ |
+    | |            | |            | |
+    | | pane1      | |            | |
+    | |            | |            | |
+    | | pane2      | |            | |
+    | |            | |            | |
+    | +------------+ +------------+ |
+    +-------------------------------+
+
+SESSIONS (set of windows):
+==========================
+    ^a :new -s <name>   - creates a new session
+    ^a $                - rename current session
+    ^a s                - list session
+
+WINDOWS (tabs):
+===============
+    ^a w                - list
+    ^a c                - create
+    ^a , <name>         - rename
+    ^a &                - close
+
+    ^a <0-9>            - goto number
+    ^a n                - next
+    ^a p                - previous
+
+PANES (splitted windows):
+=========================
+    ^a v                - split vert
+    ^a s                - split horiz
+    ^a !                - pane -> windows
+    ^a x                - kill pane
+
+    ^a <space>          - reorganize
+    ^a H,J,K,L          - resize
+    ^a h,j,k,l          - select
+    ^a {                - previous
+    ^a }                - next
+    ^a [ - (quit)       - scroll into the pane
+

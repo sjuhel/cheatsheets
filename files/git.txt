@@ -1,0 +1,78 @@
+################################################################################
+# GIT CHEAT SHEET                                                              #
+#                                                                              #
+# made by sjuhel                                                               #
+################################################################################
+
+
+BASICS:
+=======
+    git <cmd> --help         - show git help for cmd
+    HEAD                     - pointer to the last commit
+    HEAD~1                   - parent of HEAD
+    master                   - default local branch
+    origin                   - default remote name
+
+
+COMMITS RULES:
+==============
+    Must be in quotation marks
+    Written in the present tense
+    Should be brief (50 characters or less) when using -m
+
+GIT WORKFLOW:
+=============
+    git init                 - create a new git repository
+    git clone                - clone a remote repository
+    git status               - inspect content of working dir & staging area
+
+    git add <file>           - add file to the staging area
+    git mv <old> <new>       - move file from old to new
+    git rm <file>            - delete file in the working dir
+    git rm --cached <file>   - stop tracking file
+
+    git diff                 - show diffs between working dir & staging area
+    
+    git commit -m "msg"      - permanently stores file changes in the repo
+    git log                  - show list of previous commits
+    git show <id>            - show a specific commit
+
+GIT BACKTRACKING:
+=================
+    git checkout HEAD <file> - restore the file to the HEAD version
+    git reset HEAD <file>    - unstage file changes
+    git reset <SHA>          - reset to a previous commit
+    git commit --amend       - undo the last commit
+
+GIT BRANCHES:
+=============
+    git branch               - list all branches
+    git branch <name>        - create a new branch
+    git checkout <name>      - switch to branch name
+    git branch -d <name>     - delete a branch
+
+    git checkout <rcv branch>;  - merge branch (resolve conflicts)
+    git merge <dst branch>
+
+GIT REMOTES:
+============
+    git remote -v            - list remotes
+    git fetch <remote>       - fetch files changes from a remote
+    git merge <rem>/<br>     - merge remote branch into local one
+    git push <rem> <br>      - push the local changes to a remote
+
+    workflow:
+    ---------
+        Fetch and merge changes from the remote
+        Create a branch to work on a new project feature
+        Develop the feature on your branch and commit your work
+        Fetch and merge from the remote again (in case new commits were 
+          made while you were working)
+        Push your branch up to the remote for review
+
+GIT TAGS:
+=========
+    git tag <name> <id>      - tag a commit with name
+    git tag -l               - list tags
+    git push --follow-tags   - push tags to the remote
+

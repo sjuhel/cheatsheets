@@ -1,0 +1,82 @@
+################################################################################
+# MARKDOWN CHEAT SHEET                                                         #
+#                                                                              #
+# made by sjuhel                                                               #
+################################################################################
+
+
+HEADINGS:
+=========
+    # heading 1
+    ## heading 2            
+    ### heading 3
+    ...
+
+EMPHASIS:
+=========
+    *some text*         - displayed in italic
+    **some text**       - displayed in bold
+ 
+TYPOGRAPHY:
+===========
+    - - - or * * *           - horizontal rule
+    ends line with 2 spaces  - line break (html <br />)
+    <Enter>                  - new line (new <p> in html)
+
+LISTS:
+======
+    orderer list                  unordered list
+    1. item                       * item
+    2. item                       * item
+      2.1 item                      * another item
+      ...                           ...
+    3. item                       * item
+
+	note: list type can be mixed
+
+LINKS:
+======
+    <http://www.google.com>                           - direct link
+    <address@goolge.com>                              - direct email address
+    [inline](http://www.inline.com "Optional text")   - inline link
+
+    [reference][id]
+    [id]: http://www.reference.com "Optional text"    - referenced link
+
+    Some text about the life[^footnote]
+    [^footnote]: Text of the footnote                 - footnotes
+
+IMAGES:
+=======
+    ![alt text](/path/to/image "Title")               - inline image
+
+    ![alt text][id]
+    [id]: /path/to/image "Title"                      - refernced image
+
+BLOCKQUOTES:
+============
+    > This is an example of blockquotes
+
+CODE BLOCKS:
+============
+    `inline code`
+
+    ```programming-language
+    multiline code
+    ```
+
+TABLE DATA:
+===========
+    | First Header | Second Header | Third Header |
+    | ------------ | ------------- | ------------ |
+    | Content      | Cell          |         Cell |
+
+ESCAPING SEQUENCES:
+===================
+    Backslash (\) escapes the following characters:
+    \ ` * _ { } [ ] ( ) # + - . !
+    \*this text is surrounded by literal asterisks\*
+
+    Avoid accidental numbered lists by escaping:
+    1918\. What a great season.
+
