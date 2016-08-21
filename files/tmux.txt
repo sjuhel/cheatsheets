@@ -1,12 +1,15 @@
-u################################################################################
-# TMUX CHEAT SHEET                                                             #
-#                                                                              #
-# made by sjuhel                                                               #
-################################################################################
+================================================================================
+*                                                                              *
+*                              TMUX Cheat Sheet                                *
+*                                                                              *
+* author      : sjuhel                                                         *
+* version     : 0.3                                                            *
+* last update : 2016/08/21                                                     *
+================================================================================
 
 
-COMMANDS:
-=========
+Commands
+--------
     tmux new -s <name>                  - creates new session
     tmux attach -t <name>               - attach to an existing session
     tmux detach                         - detach from a session
@@ -14,8 +17,8 @@ COMMANDS:
     tmux rename-session -t <old> <new>  - rename a session
     tmux ls                             - list all sessions
 
-TMUX VISUAL LAYOUT:
-===================
+TMUX Visual Layout
+------------------
     +- session ---------------------+
     |                               |
     | +- window ---+ +- window ---+ |
@@ -27,14 +30,14 @@ TMUX VISUAL LAYOUT:
     | +------------+ +------------+ |
     +-------------------------------+
 
-SESSIONS (set of windows):
-==========================
+Sessions (set of windows)
+-------------------------
     ^a :new -s <name>   - creates a new session
     ^a $                - rename current session
     ^a s                - list session
 
-WINDOWS (tabs):
-===============
+Windows (tabs)
+--------------
     ^a w                - list
     ^a c                - create
     ^a , <name>         - rename
@@ -44,8 +47,8 @@ WINDOWS (tabs):
     ^a n                - next
     ^a p                - previous
 
-PANES (splitted windows):
-=========================
+Panes (splitted windows)
+------------------------
     ^a v                - split vert
     ^a s                - split horiz
     ^a !                - pane -> windows
@@ -58,3 +61,4 @@ PANES (splitted windows):
     ^a }                - next
     ^a [ - (quit)       - scroll into the pane
 
+EOF.

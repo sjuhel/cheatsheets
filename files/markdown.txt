@@ -1,30 +1,33 @@
-################################################################################
-# MARKDOWN CHEAT SHEET                                                         #
-#                                                                              #
-# made by sjuhel                                                               #
-################################################################################
+================================================================================
+*                                                                              *
+*                         MarkDown Cheat Sheet                                 *
+*                                                                              *
+* author      : sjuhel                                                         *
+* version     : 0.3                                                            *
+* last update : 2016/08/21                                                     *
+================================================================================
 
 
-HEADINGS:
-=========
+Headings
+--------
     # heading 1
     ## heading 2            
     ### heading 3
     ...
 
-EMPHASIS:
-=========
+Emphasis
+--------
     *some text*         - displayed in italic
     **some text**       - displayed in bold
- 
-TYPOGRAPHY:
-===========
+
+Typography
+----------
     - - - or * * *           - horizontal rule
     ends line with 2 spaces  - line break (html <br />)
     <Enter>                  - new line (new <p> in html)
 
-LISTS:
-======
+Ordered and Unordered Lists
+---------------------------
     orderer list                  unordered list
     1. item                       * item
     2. item                       * item
@@ -34,8 +37,8 @@ LISTS:
 
 	note: list type can be mixed
 
-LINKS:
-======
+Hyper Links
+-----------
     <http://www.google.com>                           - direct link
     <address@goolge.com>                              - direct email address
     [inline](http://www.inline.com "Optional text")   - inline link
@@ -46,33 +49,33 @@ LINKS:
     Some text about the life[^footnote]
     [^footnote]: Text of the footnote                 - footnotes
 
-IMAGES:
-=======
+Images
+------
     ![alt text](/path/to/image "Title")               - inline image
 
     ![alt text][id]
-    [id]: /path/to/image "Title"                      - refernced image
+    [id]: /path/to/image "Title"                      - referenced image
 
-BLOCKQUOTES:
-============
+Blockquotes
+-----------
     > This is an example of blockquotes
 
-CODE BLOCKS:
-============
+Code Blocks
+-----------
     `inline code`
 
     ```programming-language
     multiline code
     ```
 
-TABLE DATA:
-===========
+Tables
+------
     | First Header | Second Header | Third Header |
     | ------------ | ------------- | ------------ |
     | Content      | Cell          |         Cell |
 
-ESCAPING SEQUENCES:
-===================
+Escaping Sequences
+------------------
     Backslash (\) escapes the following characters:
     \ ` * _ { } [ ] ( ) # + - . !
     \*this text is surrounded by literal asterisks\*
@@ -80,3 +83,4 @@ ESCAPING SEQUENCES:
     Avoid accidental numbered lists by escaping:
     1918\. What a great season.
 
+EOF.

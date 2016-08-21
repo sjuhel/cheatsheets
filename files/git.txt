@@ -1,27 +1,29 @@
-################################################################################
-# GIT CHEAT SHEET                                                              #
-#                                                                              #
-# made by sjuhel                                                               #
-################################################################################
+================================================================================
+*                                                                              *
+*                             GIT Cheat Sheet                                  *
+*                                                                              *
+* author      : sjuhel                                                         *
+* version     : 0.3                                                            *
+* last update : 2016/08/21                                                     *
+================================================================================
 
 
-BASICS:
-=======
+Basics Commands
+---------------
     git <cmd> --help         - show git help for cmd
     HEAD                     - pointer to the last commit
     HEAD~1                   - parent of HEAD
     master                   - default local branch
     origin                   - default remote name
 
-
-COMMITS RULES:
-==============
+Commit Rules
+------------
     Must be in quotation marks
     Written in the present tense
     Should be brief (50 characters or less) when using -m
 
-GIT WORKFLOW:
-=============
+Git Workflow
+------------
     git init                 - create a new git repository
     git clone                - clone a remote repository
     git status               - inspect content of working dir & staging area
@@ -37,15 +39,15 @@ GIT WORKFLOW:
     git log                  - show list of previous commits
     git show <id>            - show a specific commit
 
-GIT BACKTRACKING:
-=================
+Git Backtracking
+----------------
     git checkout HEAD <file> - restore the file to the HEAD version
     git reset HEAD <file>    - unstage file changes
     git reset <SHA>          - reset to a previous commit
     git commit --amend       - undo the last commit
 
-GIT BRANCHES:
-=============
+Git Branching
+-------------
     git branch               - list all branches
     git branch <name>        - create a new branch
     git checkout <name>      - switch to branch name
@@ -54,8 +56,8 @@ GIT BRANCHES:
     git checkout <rcv branch>;  - merge branch (resolve conflicts)
     git merge <dst branch>
 
-GIT REMOTES:
-============
+Git Remotes
+-----------
     git remote -v            - list remotes
     git fetch <remote>       - fetch files changes from a remote
     git merge <rem>/<br>     - merge remote branch into local one
@@ -70,9 +72,10 @@ GIT REMOTES:
           made while you were working)
         Push your branch up to the remote for review
 
-GIT TAGS:
-=========
+Git Tags
+--------
     git tag <name> <id>      - tag a commit with name
     git tag -l               - list tags
     git push --follow-tags   - push tags to the remote
 
+EOF.
