@@ -1,0 +1,121 @@
+================================================================================
+*                                                                              *
+*                              SQL cheat sheet                                 *
+*                                                                              *
+* author      : sjuhel                                                         *
+* version     : 0.3                                                            *
+* last update : 2016/08/31                                                     *
+================================================================================
+
+
+General
+-------
+    SHOW DATABASES;                    - list all available databases
+    SHOW TABLES;                       - list all tables within a database
+
+    USE <db_name>;                     - use a specific database
+    EXPLAIN <t_name>;                  - describe the table structure
+
+Databases Manipulation
+----------------------
+    CREATE DATABASE <db_name>;         - create a new database
+    DROP DATABASE <db_name>;           - delete a database
+
+Tables Manipulation
+-------------------
+    CREATE TABLE <t_name> (            - create a new table
+        col_name col_type,
+        ...
+    );
+
+    DROP Table <t_name>;               - delete a table
+
+    ALTER TABLE <t_name> RENAME <new_t_name>;         - rename a table
+    ALTER TABLE <t_name> ADD <col_name> <col_type>;   - add a new column
+    ALTER TABLE <t_name> DROP <col_name>;             - delete a column
+    ALTER TABLE <t_name> CHANGE <old_name> <new_name> <new_type>;
+                                                      - rename old table to new
+                                                        with a new type
+
+    Datatypes:
+    ----------
+        VARCHAR(size)                  - single line string (0-255)
+        TEXT                           - multi line string (0-65535) 
+
+        BIGINT   [UNISGNED]            - 8 bytes coded integer
+        INT      [UNISGNED]            - 4 bytes coded integer
+        SMALLINT [UNISGNED]            - 2 bytes coded integer
+
+        DECIMAL(size, d)               - fractional number with <size> digits
+                                         and <d> to the right of the decimal 
+        DATE                           - hold a date 'YYYY-MM-DD'
+        TIME                           - hold a time 'HH-MM-SS'
+        DATETIME                       - hold a date and a time
+
+        BOOL                           - boolean value (0 or 1)
+
+        Extras:
+        -------
+            NOT NULL                   - the value can not be NULL
+            DEFAULT                    - specify a default value
+            AUTO_INCREMENT             - increment each records
+
+Data Manipulation
+-----------------
+    INSERT INTO <t_name>               - insert new rows into table
+    VALUES (val_1, val_2, ...);
+    INSERT INTO <t_name>(col_1, col_2, ...)
+    VALUES (val_1, val_2, ...);
+
+    UPDATE <t_name> SET col_1 = val_1, ...  - update column(s) in a row
+    WHERE <condition>
+
+    DELETE FROM <t_name>               - delete row(s) in a table
+    WHERE <condition>
+
+    TRUNCATE FROM <t_name>             - flush data inside a table
+
+Selecting Records
+-----------------
+    SELECT * FROM <t_name>             - select all data from a table
+    SELECT col_1, ... FROM <t_name>    - select data from a table
+
+    SELECT col_1, ... FROM <t_name>    - select only certain data from a table
+    WHERE col <op> value
+    AND ...
+    OR ...
+
+    WHERE clause operators:
+    -----------------------
+        comparison:
+            =                           : equal
+            !=                          : not equal
+            >                           : greater than
+            <                           : less than
+            >=                          : greater or equal than
+            <=                          : lower or equal than
+
+        logical:
+            AND                         : logical and
+            OR                          : logical or
+            BETWEEN val_1 AND val_2     : between an inclusive range
+            IN (val_1, ...)             : in a defined set of values 
+            LIKE                        : search for a pattern ("%pattern%")
+
+            EXISTS                      : 
+            ALL
+            ANY
+    
+
+    SELECT DISTINCT ... FROM <t_name>  - select unique records
+
+    SELECT ... FROM <t_name>           - limit output results from m to n
+    ... LIMIT <n> OFFSET <m>
+
+    SELECT ... FROM <t_name>           - order result by columns values
+    ... ORDEY BY col_1 [ASC|DESC], 
+                 col_2 [ASC|DESC]...
+
+    SELECT function(col) FROM <t_name>
+    ... GROUP BY co
+    HAVING ...
